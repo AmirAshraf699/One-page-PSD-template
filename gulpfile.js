@@ -21,6 +21,7 @@ gulp.task('css-plus', function () {
 
 gulp.task('css', function () {
     return gulp.src('./css/kasper.css')
+        .pipe(concat('main.css'))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('dist/css'))
         .pipe(livereload())
